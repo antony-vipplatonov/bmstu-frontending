@@ -1,0 +1,15 @@
+.imgShip {
+    max-width: 40%;
+    max-height: 30rem;
+}
+.pShip {
+    font-size: 1.5em;
+}
+.sTable {
+	border-collapse: collapse;
+	border: 2px solid black;
+}
+.sTd{
+	border: 2px solid black;
+	text-align: center;
+}

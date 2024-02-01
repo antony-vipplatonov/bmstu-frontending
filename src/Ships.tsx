@@ -1,21 +1,21 @@
 import { useState, useEffect, FC } from 'react'
-import './VoteList.css'
+import './Ships.css'
 import {Breadcrumb} from 'react-bootstrap'
-import InputField from './components/InputField'
-import VotingCard from './components/VotingCard'
+import InputField from './components/InputField.tsx'
+import ShipCard from './components/ShipCard.tsx'
 
-import { Voting, searchInVoteList } from './modules/search-in-vote-list.ts'
+import { Ship, searchInShipList } from './modules/search-in-ship-list.ts'
 
 
 
-const VoteList: FC = () => {
+const ShipList: FC = () => {
   const [searchValue, setSearchValue] = useState('')
-  const [voting, setVote] = useState<Voting[]>([])
+  const [ships, setShips] = useState<Ship[]>([])
   const [searchQuery, setSearchQuery] = useState('')
   
   const handleSearch = async () =>{
-    const response = await searchInVoteList(searchValue)
-    await setVote(response.voting)
+    const response = await searchInShipList(searchValue)
+    await setShips(response.ships)
 }
 useEffect(()=>{
   handleSearch();
@@ -32,7 +32,7 @@ useEffect(() => {
     <>
     <Breadcrumb>
       <Breadcrumb.Item href="#home">Главная</Breadcrumb.Item>
-      <Breadcrumb.Item active>Каталог</Breadcrumb.Item>
+      <Breadcrumb.Item active>Архив</Breadcrumb.Item>
     </Breadcrumb>
       <InputField
                 value={searchValue}
@@ -42,15 +42,15 @@ useEffect(() => {
             />
         <br/>
         <div className="card-deck">
-              {voting.map((item)=> (
-                      <VotingCard {...item} />
+              {ships.map((item)=> (
+                      <ShipCard {...item} />
               ))}
         </div>
     </>
   )
 }
 
-export default VoteList
+export default ShipList
 
 
 

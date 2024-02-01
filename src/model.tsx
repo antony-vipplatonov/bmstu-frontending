@@ -1,47 +1,60 @@
-export interface Voting {
+export interface ship {
     id: number
     name: string
-    type: string
+	weapon: string
+	armoring: string
     status: string
+	year: number
+	displacement: number
+	length: number
+	speed: number
     image_src: string
 }
 
-export interface VoteList {
+export interface Ships {
     draftID: number
-    voting: Voting[]
+    ships: ship[]
 }
 
 
-export const mockVoteList: VoteList = 
+export const mockShips: Ships = 
 {
-	"voting": [
+	"ships": [
 		{
 			"id": 5,
-			"name": "Юность",
-			"type": "Сквер",
+			"name": "vsdf",
+			"weapon": "23",
+			"armoring": "23",
+			"year": 1234,
+			"displacement": 67.0,
+			"length": 123.0,
+			"speed": 23.0,
 			"status": "действует",
 			"image_src": ""
 		},
 		{
-			"id": 1,
-			"name": "Лесной оазис",
-			"type": "парк",
-			"status": "действует",
-			"image_src": "https://i.pinimg.com/originals/8d/31/44/8d31440ebf18d6588c4e005a0c187240.png"
-		},
-		{
 			"id": 3,
-			"name": "Станция удобства",
-			"type": "остановка общественного транспорта",
+			"name": "Нати",
+			"weapon": "5 × 2 — 200-мм",
+			"armoring": "102 мм",
+			"year": 1928,
+			"displacement": 15933.0,
+			"length": 203.76,
+			"speed": 35.5,
 			"status": "действует",
-			"image_src": "https://free-png.ru/wp-content/uploads/2021/12/free-png.ru-272.png"
+			"image_src": "https://ru.wikipedia.org/wiki/%D0%A4%D0%B0%D0%B9%D0%BB:Heavy_cruiser_Nachi.jpg"
 		},
 		{
 			"id": 2,
-			"name": "Цветущий уголок",
-			"type": "парк",
+			"name": "Пенсильвания",
+			"weapon": "4 × 3 — 356-мм и 22 × 1 — 127-мм",
+			"armoring": "343 мм",
+			"year": 1916,
+			"displacement": 31400.0,
+			"length": 185.4,
+			"speed": 21.0,
 			"status": "действует",
-			"image_src": "https://papik.pro/grafic/uploads/posts/2023-04/1681531322_papik-pro-p-logotip-derevo-vektor-3.jpg"
+			"image_src": "https://ru.wikipedia.org/wiki/%D0%A4%D0%B0%D0%B9%D0%BB:USS_Pennsy_BB-38_1934.jpg"
 		}
 	],
 	"draftID": 0

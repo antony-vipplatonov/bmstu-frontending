@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import VoteList from './VoteList.tsx'
-import VotingPage from './Voting.tsx'
+import Ships from './Ships.tsx'
+import ShipPage from './Ship.tsx'
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import NavBar from './components/navbar'
@@ -13,12 +13,12 @@ const router = createBrowserRouter(
     element: <Outlet/>,
     children: [
   {
-    path: '/bmstu-frontend/vybory',
-    element: <VoteList/>
+    path: '/bmstu-frontend/seabattles',
+    element: <Ships/>
   },
   {
-    path: '/bmstu-frontend/vybory/:id',
-    element: <VotingPage/>
+    path: '/bmstu-frontend/seabattles/:id',
+    element: <ShipPage/>
   }]
 }
 ])
